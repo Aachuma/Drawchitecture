@@ -2,13 +2,12 @@ bl_info = {
     "name": "Drawchitecture",
     "description": "creates temporary workplanes by strokes or points for drawing in 3D with the grease pencil",
     "author": "Philipp Sommer",
-    "version": (1, 0),
+    "version": (1, 1),
     "blender": (2, 80, 0),
     "location": "View3D",
     # "warning": "", # used for warning icon and text in addons panel
-    # "wiki_url": "http://wiki.blender.org/index.php/Extensions:2.6/Py/"
-    #           "Scripts/My_Script",
-    # "tracker_url": "https://developer.blender.org/maniphest/task/edit/form/2/",
+    # "wiki_url": ""
+    # "tracker_url": "",
     "support": "TESTING",
     "category": "Paint"
 }
@@ -18,7 +17,7 @@ import mathutils
 
 from bpy.types import Panel
 from math import *
-from mathutils import Vector
+from mathutils import Vector, Matrix
 import numpy as np
 
 bpy.types.Scene.gp_active = bpy.props.StringProperty(name='gp_active', description='saves last used GP',
@@ -41,16 +40,21 @@ bpy.types.Scene.plane_location = bpy.props.FloatVectorProperty(name='plane_locat
 
 
 def update_offset(self, context):
+    """updates the position of the plane when the Factor in UI is change
+    """
     if 'workplane_TEMPORARY' in (obj.name for obj in bpy.data.objects):
         wp = bpy.data.objects['workplane_TEMPORARY']
-        z = bpy.context.scene.plane_offset
-        vec = Vector((0.0, 0.0, z))
-        inv = wp.rotation_euler.to_matrix()
-        # vec aligned to local axis
-        vec_rot = vec @ inv
+        # rotation in euler
+        eu = wp.rotation_euler
+        # offset factor in UI
+        factor_offset = bpy.context.scene.plane_offset
+        # Defining Vector for Translation in Z Axis and rotating it to be the normal of the plane
+        vec_offset = Vector((0, 0, factor_offset))
+        vec_offset.rotate(eu)
+
         loc = bpy.context.scene.plane_location
         vec_loc = Vector((loc[0], loc[1], loc[2]))
-        wp.location = vec_loc + vec_rot
+        wp.location = vec_loc + vec_offset
 
 
 bpy.types.Scene.plane_offset = bpy.props.FloatProperty(name='plane_offset',
@@ -62,9 +66,9 @@ bpy.types.Scene.plane_offset = bpy.props.FloatProperty(name='plane_offset',
 def cross(a, b):
     """ simple cross product formula for calculating normal vector
     """
-    c = ((a[1] * b[2] - a[2] * b[1],
-          a[2] * b[0] - a[0] * b[2],
-          a[0] * b[1] - a[1] * b[0]))
+    c = Vector((a[1] * b[2] - a[2] * b[1],
+                a[2] * b[0] - a[0] * b[2],
+                a[0] * b[1] - a[1] * b[0]))
     return c
 
 
