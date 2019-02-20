@@ -867,7 +867,8 @@ class WPselect3P(bpy.types.Operator):  # Plane from 1/2/3 Points in Selection
 
 class View3DPanel:
     bl_space_type = 'VIEW_3D'
-    bl_region_type = 'TOOLS'
+    bl_region_type = 'UI'
+    bl_category = 'Drawchitecture'
 
 
 class AddPanel(View3DPanel, Panel):
