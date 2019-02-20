@@ -1,4 +1,4 @@
-#DRAWCHITECTURE  
+**DRAWCHITECTURE**  
 _freehand sketching in **3D** using a Add-on for [**Blender 2.8 beta**](https://www.blender.org/2-8/)_  
 `Author: Philipp Sommer` `Blender Plug-In scripted in Python` `making use of graphic tablet hardware or mouse`
 
@@ -16,7 +16,7 @@ non-drawing-related features in Blender.
 ![screenshot 3](https://github.com/Aachuma/Drawchitecture/blob/master/pictures/2019-02-20_23h46_59.png?raw=true)
 ![screenshot 4](https://github.com/Aachuma/Drawchitecture/blob/master/pictures/2019-02-20_23h47_38.png?raw=true)
 #    
-#INSTALLATION
+**INSTALLATION**
 ![screenshots of the installation process](https://github.com/Aachuma/Drawchitecture/blob/master/how_to_install.png?raw=true)
 
 1. After downloading the newest version of [**Blender 2.8 beta**](https://www.blender.org/2-8/) go to `Edit` `>` `Preferences` `>` `Add-ons` `>` `Install...`
@@ -25,7 +25,7 @@ non-drawing-related features in Blender.
 4. If you do not see the sidebar in the `3D View` you may hit `N` or click the `<` on the right edge of the screen
 5. Select the Tab labeled `Drawchitecture` 
 #
-#INPUTS - may be mapped to your Digital Pen Tablet input device  
+**INPUTS - may be mapped to your Digital Pen Tablet input device**  
 `TAB` switch between modes of blender - click any button in `Drawchitecture`-menu to come back to drawmode
 
 * mouse:  
@@ -38,7 +38,7 @@ non-drawing-related features in Blender.
   * `SHIFT` while drawing: smooth strokes / `+ MMB` pan view     
   * `CTRL` `+ LMB` eraser / activate stepping in number sliders / `+ MMB` zoom
 #
-#####BASIC WORKFLOW
+**BASIC WORKFLOW**
 
 You might want to delete or turn of the visibility of the standard-objects in the scene (Camera, Light, Box) before
 starting to draw. Click the eyeball icon in the `outliner` where all objects are listed to make them invisible or 
