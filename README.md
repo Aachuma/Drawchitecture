@@ -2,6 +2,13 @@
 _freehand sketching in **3D** using a Add-on for [**Blender 2.8 beta**](https://www.blender.org/2-8/)_  
 `Author: Philipp Sommer` `Blender Plug-In scripted in Python` `making use of graphic tablet hardware or mouse`
 
+https://www.youtube.com/channel/UCEmi88NB6g-pEGmbsVSNRKw
+
+[![Link to Youtube - installation and Example](http://img.youtube.com/vi/8onfTbZq3iY&t/0.jpg)](http://www.youtube.com/watch?v=8onfTbZq3iY&t "Drawchitecture Installation and Example")
+
+[![Link to Youtube - first drawing](http://img.youtube.com/vi/qXr11k0JvXA&t/0.jpg)](http://www.youtube.com/watch?v=qXr11k0JvXA&t "Drawchitecture First Drawing")
+
+
 This Add-on makes use of the new Grease Pencil features in Blender 2.8 beta as a 3D sketching Tool for users 
 without any Blender experience. **Drawchitecture** enables the user to quickly create grids of planes right 
 at the last stroke of the pen or at up to 3 selected stroke vertices. 
